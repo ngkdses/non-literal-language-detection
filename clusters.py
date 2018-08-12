@@ -112,6 +112,40 @@ def quicksort(array, key, reverse=False):
     q_routine(array, left, right)
 
 
+# Minimum spanning tree
+# Return list of MST edges and list of remaining edges
+def kruskal(nodes, edges):
+    union_find = Union_find(nodes)
+    
+    quicksort(edges, key=lambda edge: edge.cost)
+    
+    # If graph has no edges:
+    if not edges:
+        return None
+
+    # Store chosen and non-chosen edges
+    mst_edges = []
+    remaining_edges = []
+
+    for i in range(len(edges)):
+
+        # Get first edge
+        min_edge = edges[i]
+        x, y = min_edge.word_u, min_edge.word_v
+
+        if union_find.union(x, y):
+            mst_edges.append(min_edge)
+        else:
+            remaining_edges.append(min_edge)
+
+        # Once MST is complete
+        if union_find.clusters == 1:
+            remaining_edges += edges[i + 1:]
+            break
+    
+    return mst_edges, remaining_edges
+    
+
 # Return max spacing and total cost with target number of clusters k
 def clusters(nodes, edges, k):
     union_find = Union_find(nodes)
