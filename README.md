@@ -1,4 +1,6 @@
 # non-literal-language-detection
+
+
 Tools for analyzing co-occurrence network built out of large natural language corpus.
 
 hume.py contains request function allowing user to pull up subgraph from co-occurrence network and analyze it with max-spacing k-clustering algorithm (and is named after Bruno Latour and Genevieve Teil's proposed Hume Machine).
