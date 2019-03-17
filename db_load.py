@@ -5,7 +5,13 @@ import time
 
 stemmer = Stemmer.Stemmer('english')
 
+nltk.download('gutenberg')
+nltk.download('brown')
+nltk.download('reuters')
+nltk.download('punkt')
+
 # Set of stopwords
+nltk.download('stopwords')
 stop_words = set(nltk.corpus.stopwords.words('english'))
 
 
