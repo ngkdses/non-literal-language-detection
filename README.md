@@ -10,3 +10,5 @@ clusters.py contains code for union-find data structure, Kruskal's MST algorithm
 db_load.py creates database with Sqlite3 and loads it with processed corpus from NLTK. Converts corpus to word counts and word co-occurrence counts (number of times any two words occur in the same sentence together).
 
 visualize_graph.py generates .png image of subgraph using pydot and Graphviz, with minimum spanning tree indicated in red.
+
+Requires: python3, NumPy, NLTK, PyStemmer, Graphviz, PyDot
